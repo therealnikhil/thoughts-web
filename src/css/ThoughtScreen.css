@@ -1,0 +1,168 @@
+.create-thought-bg {
+  padding: 24px 0;
+  background-color: #483673;
+}
+.create-thought-box {
+  margin: 24px;
+  padding: 24px 0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.create-thought-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.create-thought-input {
+  display: block;
+  margin: 0 24px;
+}
+.create-thought-heading {
+  text-align: left;
+  margin: 0 24px 16px 24px;
+}
+.create-thought-heading.padded {
+  margin-top: 16px;
+}
+.moods {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 24px;
+}
+.mood-0-img,
+.mood-1-img,
+.mood-2-img,
+.mood-3-img,
+.mood-4-img,
+.mood-5-img,
+.mood-6-img,
+.mood-7-img,
+.mood-8-img {
+  width: 48px;
+  height: 48px;
+  background-size: cover;
+  margin: auto;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+.mood-0-img {
+  background-image: url("../assets/angry.png");
+}
+.mood-1-img {
+  background-image: url("../assets/frustrated.png");
+}
+.mood-2-img {
+  background-image: url("../assets/stressed.png");
+}
+.mood-3-img {
+  background-image: url("../assets/depressed.png");
+}
+.mood-4-img {
+  background-image: url("../assets/sad.png");
+}
+.mood-5-img {
+  background-image: url("../assets/meh.png");
+}
+.mood-6-img {
+  background-image: url("../assets/pleasant.png");
+}
+.mood-7-img {
+  background-image: url("../assets/happy.png");
+}
+.mood-8-img {
+  background-image: url("../assets/ecstatic.png");
+}
+.mood-wrapper {
+  flex: 1;
+  border-radius: 8px;
+}
+.mood-wrapper.clicked {
+  box-shadow: inset 0 0 0 2px #483673;
+}
+.mood-wrapper:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+.mood-wrapper > p {
+  margin-top: 0;
+}
+.mood-wrapper > img {
+  margin-top: 1em;
+}
+.create-btn {
+  color: #fff;
+  background-color: #029060;
+  padding: 8px 24px;
+  margin: 24px;
+  border-radius: 8px;
+}
+.create-btn:hover {
+  background-color: #02754e;
+  cursor: pointer;
+}
+.thought-input {
+  margin: 0 24px;
+}
+.thought-box-0,
+.thought-box-1,
+.thought-box-2,
+.thought-box-3,
+.thought-box-4,
+.thought-box-5,
+.thought-box-6,
+.thought-box-7,
+.thought-box-8 {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 24px;
+}
+.thought-box-0 {
+  background-color: #d20808;
+}
+.thought-box-1 {
+  background-color: #d26308;
+}
+.thought-box-2 {
+  background-color: #674505;
+}
+.thought-box-3 {
+  background-color: #d28b08;
+}
+.thought-box-4 {
+  background-color: #d2a908;
+}
+.thought-box-5 {
+  background-color: #dbd40a;
+}
+.thought-box-6 {
+  background-color: #8eb601;
+}
+.thought-box-7 {
+  background-color: #22b601;
+}
+.thought-box-8 {
+  background-color: #188400;
+}
+.thought-title {
+  color: #fff;
+  text-align: left;
+  margin: 16px 0;
+}
+.thought-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 0.83em;
+}
+.thought-mood {
+  text-align: right;
+  color: #fff;
+}
+.thoughts-heading {
+  margin-left: 24px;
+  text-align: left;
+}
