@@ -105,7 +105,7 @@ class ThoughtScreen extends Component {
     let ind = 0
     do {
       ind = Math.floor(Math.random() * this.state.happyThoughts.length)
-    } while (ind === this.state.randomIndex)
+    } while (ind === this.state.randomIndex && this.state.happyThoughts.length > 1)
     console.log(ind)
     this.setState({
       randomIndex: ind
