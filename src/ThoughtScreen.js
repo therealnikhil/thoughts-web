@@ -15,6 +15,7 @@ class ThoughtScreen extends Component {
     super(props)
     this.state = {
       thoughts: [],
+      happyThoughts: [],
       newThoughtTitle: "",
       newThoughtMood: -1,
       isHome: true,
@@ -42,7 +43,7 @@ class ThoughtScreen extends Component {
       fetch("https://happy-thoughts-api.herokuapp.com/thoughts/" + localStorage.getItem("uid") + "?mood=7", { mode: "cors" })
         .then(resp => resp.json())
         .then(data => {
-          this.setState({ thoughts: data }, () => {
+          this.setState({ happyThoughts: data }, () => {
             this.getRandomIndex()
           })
         })
@@ -103,7 +104,7 @@ class ThoughtScreen extends Component {
   getRandomIndex() {
     let ind = 0
     do {
-      ind = Math.floor(Math.random() * this.state.thoughts.length)
+      ind = Math.floor(Math.random() * this.state.happyThoughts.length)
     } while (ind === this.state.randomIndex)
     console.log(ind)
     this.setState({
@@ -111,7 +112,7 @@ class ThoughtScreen extends Component {
     })
   }
   render() {
-    const { thoughts, newThoughtTitle, newThoughtMood, isHome, randomIndex } = this.state
+    const { thoughts, happyThoughts, newThoughtTitle, newThoughtMood, isHome, randomIndex } = this.state
     const images = [Bg0, Bg1, Bg2, Bg3]
     return (
       <div>
@@ -171,10 +172,10 @@ class ThoughtScreen extends Component {
           </div> :
           <div className="image-bg" style={{ backgroundImage: `url(${images[randomIndex % NUM_IMAGES]})` }}>
             <div className="filter-bg">
-              {randomIndex !== -1 && thoughts.length > 0 ?
+              {randomIndex !== -1 && happyThoughts.length > 0 ?
                 <div style={{ maxWidth: 970 }}>
-                  <p className="bg-title">{thoughts[randomIndex].title}</p>
-                  <p className="bg-text">~ {moment(thoughts[randomIndex].time).format("MMMM Do YYYY, h:mm:ss a")}</p>
+                  <p className="bg-title">{happyThoughts[randomIndex].title}</p>
+                  <p className="bg-text">~ {moment(happyThoughts[randomIndex].time).format("MMMM Do YYYY, h:mm:ss a")}</p>
                   <div className="shuffle" onClick={this.getRandomIndex} />
                 </div> :
                 <p className="bg-title">Start logging happy thoughts to see them and reminisce here.</p>
