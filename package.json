@@ -2,6 +2,10 @@
   "name": "thoughts-web",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "devDependencies": {
     "react-scripts": "2.1.3"
   },
