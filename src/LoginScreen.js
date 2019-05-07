@@ -19,7 +19,7 @@ class LoginScreen extends Component {
   fetchUser(e) {
     e.preventDefault()
     if (this.state.isLogin) {
-      fetch("http://localhost:4000/users?email=" + this.state.email + "&password=" + this.state.password, {
+      fetch("https://happy-thoughts-api.herokuapp.com/users?email=" + this.state.email + "&password=" + this.state.password, {
         mode: "cors"
       })
         .then(resp => resp.json())
@@ -35,7 +35,7 @@ class LoginScreen extends Component {
       } else if (!this.validEmail(this.state.email)) {
         error = "Invalid Email"
       } else {
-        fetch("http://localhost:4000/users", {
+        fetch("https://happy-thoughts-api.herokuapp.com/users", {
           method: "POST",
           mode: "cors",
           headers: {

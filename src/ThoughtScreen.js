@@ -33,13 +33,13 @@ class ThoughtScreen extends Component {
   }
   fetchData() {
     if (this.state.isHome) {
-      fetch("http://localhost:4000/thoughts/" + localStorage.getItem("uid"), { mode: "cors" })
+      fetch("https://happy-thoughts-api.herokuapp.com/thoughts/" + localStorage.getItem("uid"), { mode: "cors" })
         .then(resp => resp.json())
         .then(data => {
           this.setState({ thoughts: data })
         })
     } else {
-      fetch("http://localhost:4000/thoughts/" + localStorage.getItem("uid") + "?mood=7", { mode: "cors" })
+      fetch("https://happy-thoughts-api.herokuapp.com/thoughts/" + localStorage.getItem("uid") + "?mood=7", { mode: "cors" })
         .then(resp => resp.json())
         .then(data => {
           this.setState({ thoughts: data }, () => {
@@ -55,7 +55,7 @@ class ThoughtScreen extends Component {
     this.setState({ newThoughtMood: mood })
   }
   createThought() {
-    fetch("http://localhost:4000/thoughts/" + localStorage.getItem("uid"), {
+    fetch("https://happy-thoughts-api.herokuapp.com/thoughts/" + localStorage.getItem("uid"), {
       method: "POST",
       mode: "cors",
       headers: {
