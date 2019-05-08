@@ -170,7 +170,7 @@ class ThoughtScreen extends Component {
               )
             })}
           </div> :
-          <div className="image-bg" style={{ backgroundImage: `url(${images[randomIndex % NUM_IMAGES]})` }}>
+          <div className="image-bg" style={{ backgroundImage: `url(${randomIndex !== -1 ? images[Math.floor(Math.random() * NUM_IMAGES)] : images[0]})` }}>
             <div className="filter-bg">
               {randomIndex !== -1 && happyThoughts.length > 0 ?
                 <div style={{ maxWidth: 970 }}>
