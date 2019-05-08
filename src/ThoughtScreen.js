@@ -19,7 +19,8 @@ class ThoughtScreen extends Component {
       newThoughtTitle: "",
       newThoughtMood: -1,
       isHome: true,
-      randomIndex: -1
+      randomIndex: -1,
+      randomImgIndex: 0
     }
     this.onChange = this.onChange.bind(this)
     this.setMood = this.setMood.bind(this)
@@ -103,17 +104,31 @@ class ThoughtScreen extends Component {
   }
   getRandomIndex() {
     let ind = 0
+    let imgInd = 0
     do {
       ind = Math.floor(Math.random() * this.state.happyThoughts.length)
     } while (ind === this.state.randomIndex && this.state.happyThoughts.length > 1)
-    console.log(ind)
+    do {
+      imgInd = Math.floor(Math.random() * NUM_IMAGES)
+    } while (imgInd === this.state.randomImgIndex)
     this.setState({
-      randomIndex: ind
+      randomIndex: ind,
+      randomImgIndex: imgInd
     })
   }
   render() {
-    const { thoughts, happyThoughts, newThoughtTitle, newThoughtMood, isHome, randomIndex } = this.state
+    const {
+      thoughts,
+      happyThoughts,
+      newThoughtTitle,
+      newThoughtMood,
+      isHome,
+      randomIndex,
+      randomImgIndex
+    } = this.state
+
     const images = [Bg0, Bg1, Bg2, Bg3]
+
     return (
       <div>
         <Navbar homeHandler={this.goToHome} happyThoughtsHandler={this.goToHappyThoughts} />
@@ -170,7 +185,7 @@ class ThoughtScreen extends Component {
               )
             })}
           </div> :
-          <div className="image-bg" style={{ backgroundImage: `url(${randomIndex !== -1 ? images[Math.floor(Math.random() * NUM_IMAGES)] : images[0]})` }}>
+          <div className="image-bg" style={{ backgroundImage: `url(${images[randomImgIndex]})` }}>
             <div className="filter-bg">
               {randomIndex !== -1 && happyThoughts.length > 0 ?
                 <div style={{ maxWidth: 970 }}>
