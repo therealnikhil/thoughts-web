@@ -1,17 +1,15 @@
-import React, { Component } from "react"
-import ThoughtScreen from "./ThoughtScreen"
+import React from "react"
+import HomeScreen from "./screens/HomeScreen.js";
 import LoginScreen from "./LoginScreen"
+import { user, updateLoginStatus } from "./utils.js";
 import "./App.css"
 
-class App extends Component {
-  render() {
-    let user = localStorage.getItem("uid")
-    return (
-      <div className="App">
-        {user ? <ThoughtScreen /> : <LoginScreen />}
-      </div>
-    )
+function App() {
+  updateLoginStatus();
+  if (user) {
+    return <HomeScreen />;
   }
+  return <LoginScreen />;
 }
 
-export default App
+export default App;
