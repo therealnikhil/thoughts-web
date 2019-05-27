@@ -1,14 +1,12 @@
 .create-thought-bg {
-  padding: 48px 0;
-  background-color: #483673;
+  padding: 6px 0 48px 0;
+  background-color: var(--main-purple-color);
 }
 .create-thought-box {
   margin: auto;
-  margin-top: 48px;
   padding: 24px 0;
   border-radius: 8px;
-  background-color: #fff;
-  max-width: 1170px;
+  background-color: var(--main-gray-color);
 }
 .create-thought-wrapper {
   display: flex;
@@ -21,9 +19,15 @@
 }
 .create-thought-heading {
   text-align: left;
+}
+.create-thought-subheading {
+  text-align: center;
+}
+.create-thought-heading, .create-thought-subheading {
+
   margin: 0 24px 16px 24px;
 }
-.create-thought-heading.padded {
+.create-thought-heading.padded, .create-thought-subheading.padded {
   margin-top: 16px;
 }
 .moods {
@@ -81,10 +85,10 @@
   border-radius: 8px;
 }
 .mood-wrapper.clicked {
-  box-shadow: inset 0 0 0 2px #483673;
+  box-shadow: inset 0 0 0 2px var(--main-purple-color);
 }
 .mood-wrapper:hover {
-  background-color: #efefef;
+  background-color: var(--dark-gray-color);
   cursor: pointer;
 }
 .mood-wrapper > p {
@@ -95,17 +99,24 @@
 }
 .create-btn {
   color: #fff;
-  background-color: #029060;
+  background-color: var(--main-green-color);
   padding: 8px 24px;
   margin: 24px;
   border-radius: 8px;
 }
 .create-btn:hover {
-  background-color: #02754e;
+  background-color: var(--hover-green-color);
   cursor: pointer;
 }
 .thought-input {
+  background-color: var(--dark-gray-color);
   margin: 0 24px;
+  font-size: 1em;
+  border: none;
+  resize: vertical;
+  border-radius: 8px;
+  height: 5em;
+  padding: 8px;
 }
 .thought-box-0,
 .thought-box-1,
@@ -118,34 +129,33 @@
 .thought-box-8 {
   padding: 8px 16px;
   border-radius: 8px;
-  margin: 24px;
 }
 .thought-box-0 {
-  background-color: #d20808;
+  background-color: var(--angry-color);
 }
 .thought-box-1 {
-  background-color: #d26308;
+  background-color: var(--frustrated-color);
 }
 .thought-box-2 {
-  background-color: #674505;
+  background-color: var(--stressed-color);
 }
 .thought-box-3 {
-  background-color: #d28b08;
+  background-color: var(--depressed-color);
 }
 .thought-box-4 {
-  background-color: #d2a908;
+  background-color: var(--sad-color);
 }
 .thought-box-5 {
-  background-color: #dbd40a;
+  background-color: var(--meh-color);
 }
 .thought-box-6 {
-  background-color: #8eb601;
+  background-color: var(--pleasant-color);
 }
 .thought-box-7 {
-  background-color: #22b601;
+  background-color: var(--happy-color);
 }
 .thought-box-8 {
-  background-color: #188400;
+  background-color: var(--ecstatic-color);
 }
 .thought-title {
   color: #fff;
@@ -168,52 +178,6 @@
   margin-left: 24px;
   text-align: left;
 }
-
-/* --------------------------- Happy Thoughts --------------------------- */
-
-.image-bg {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-size: cover;
-}
-
-.filter-bg {
-  background-color: rgba(72, 54, 115, 0.25);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.bg-title {
-  font-size: 2em;
-  color: #fff;
-  font-weight: 600;
-}
-
-.bg-text {
-  font-size: 1em;
-  color: #fff;
-}
-
-.shuffle {
-  background-image: url("../assets/shuffle.png");
-  background-size: contain;
-  width: 36px;
-  height: 30.66px;
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-}
-
-.shuffle:hover {
-  cursor: pointer;
+.middle-text {
+  text-align: center;
 }
