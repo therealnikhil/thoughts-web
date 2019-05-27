@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 import HomeScreen from "./screens/HomeScreen.js";
-import LoginScreen from "./LoginScreen"
+import LoginScreen from "./screens/LoginScreen.js";
 import { user, updateLoginStatus } from "./utils.js";
-import "./App.css"
+import "./App.css";
 
 function App() {
   updateLoginStatus();

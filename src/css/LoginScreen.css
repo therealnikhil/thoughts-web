@@ -1,24 +1,24 @@
-.dim-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(72, 54, 115, 0.25);
+.bg-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.bg-wrapper {
-  background-image: url("../assets/bg-0.jpg");
-  background-size: cover;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.bg {
+  object-fit: cover;
+  filter: brightness(75%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 .content-wrapper {
@@ -32,11 +32,11 @@
 }
 
 .content-wrapper > h1 {
-  color: #029060;
+  color: var(--main-green-color);
 }
 
 .purp-text {
-  color: #483673;
+  color: var(--main-purple-color);
 }
 
 .login-form {
@@ -50,18 +50,20 @@
 .pwd-field {
   font-size: 1em;
   padding: 8px;
+  margin: 4px 0;
   border-radius: 8px;
-  border: 1px solid #029060;
+  border: 1px solid var(--main-green-color);
 }
 
 .login-btn {
   margin: 24px 0;
   padding: 8px;
   border: none;
-  background-color: #483673;
+  background-color: var(--main-purple-color);
   color: #fff;
   border-radius: 8px;
   font-size: 1em;
+  text-align: center;
 }
 
 .login-btn:hover {
@@ -69,7 +71,8 @@
 }
 
 .anchor-p {
-  color: #029060;
+  color: var(--main-green-color);
+  text-align: center;
   margin: 0;
 }
 

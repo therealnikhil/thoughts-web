@@ -64,8 +64,13 @@ export default function ThoughtListScreen() {
   return (
     <div>
       <div className="create-thought-bg">
-        <h1 className="thoughts-heading" style={{ color: "#fff", textAlign: "center", marginLeft: 0 }}>Log Thought</h1>
-        <div className="create-thought-box">
+        <h1
+          className="thoughts-heading"
+          style={{ color: "#fff", textAlign: "center", marginLeft: 0 }}
+        >
+          Log Thought
+        </h1>
+        <div className="create-thought-box container">
           <div className="create-thought-wrapper">
             <textarea
               name="newThoughtTitle"
@@ -102,7 +107,7 @@ export default function ThoughtListScreen() {
       <h1 className="thoughts-heading">My Thoughts</h1>
       {thoughts.map(thought => {
         return (
-          <div className={"thought-box-" + thought.mood} key={thought._id}>
+          <div className={"thought-box-" + thought.mood + " container"} key={thought._id}>
             <h2 className="thought-title">{thought.title}</h2>
             <div className="thought-details">
               <span>
