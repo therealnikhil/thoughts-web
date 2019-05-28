@@ -53,7 +53,7 @@ export default function ThoughtListScreen() {
       const newThoughtObj = {
         title: newThoughtTitle,
         mood: newThoughtMood,
-        time: new Date().getTime()
+        time: moment().valueOf()
       };
       updateDb(newThoughtObj);
       setNewThoughtTitle("");
@@ -61,13 +61,45 @@ export default function ThoughtListScreen() {
     }
   }
 
+  function getLabelJSX(text) {
+    return (
+      <p className="date-label-wrapper">
+        <span className="date-label">{text}</span>
+      </p>
+    );
+  }
+
+  function getLabels() {
+    let currentThought = null;
+    let currentScope = "day";
+    let labels = [];
+    labels = thoughts.map((thought, i) => {
+      let labelText = "";
+      if (!currentThought || !moment(currentThought.time).isSame(thought.time, currentScope)) {
+        currentThought = thought;
+        if (moment(thought.time).isSame(moment(), "day")) {
+          labelText = "TODAY";
+        } else if (moment(thought.time).isSame(moment().subtract(1, "day"), "day")) {
+          labelText = "YESTERDAY";
+        } else if (moment(thought.time).isSame(moment(), "month")) {
+          labelText = "THIS MONTH";
+          currentScope = "month";
+        } else {
+          labelText = moment(thought.time).format("MMMM YYYY").toUpperCase();
+          currentScope = "month";
+        }
+      }
+      return labelText;
+    });
+    return labels;
+  };
+
+  let labels = getLabels();
+
   return (
     <div>
       <div className="create-thought-bg">
-        <h1
-          className="thoughts-heading"
-          style={{ color: "#fff", textAlign: "center", marginLeft: 0 }}
-        >
+        <h1>
           Log Thought
         </h1>
         <div className="create-thought-box container">
@@ -104,16 +136,21 @@ export default function ThoughtListScreen() {
           </div>
         </div>
       </div>
-      <h1 className="thoughts-heading">My Thoughts</h1>
-      {thoughts.map(thought => {
+      <h1>My Thoughts</h1>
+      {thoughts.map((thought, i) => {
         return (
-          <div className={"thought-box-" + thought.mood + " container"} key={thought._id}>
-            <h2 className="thought-title">{thought.title}</h2>
-            <div className="thought-details">
-              <span>
-                {moment(thought.time).format("MMMM Do YYYY, h:mm:ss a")}
-              </span>
-              <span>{moods[thought.mood]}</span>
+          <div key={i}>
+            { labels[i] && getLabelJSX(labels[i]) }
+            <div className="container">
+              <div className={"thought-box-" + thought.mood} key={thought._id}>
+                <h2 className="thought-title">{thought.title}</h2>
+                <div className="thought-details">
+                  <span>
+                    {moment(thought.time).format("MMMM Do YYYY, h:mm:ss a")}
+                  </span>
+                  <span>{moods[thought.mood]}</span>
+                </div>
+              </div>
             </div>
           </div>
         )

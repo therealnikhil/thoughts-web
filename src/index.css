@@ -27,30 +27,60 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1 {
+  color: var(--main-green-color);
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .container { width: auto }
+  .container {
+    width: auto;
+    margin: 0 8px;
+  }
+  .moods {
+    flex-wrap: wrap;
+  }
+  h1, p {
+    text-align: center;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .container { width: auto; }
+  .container {
+    width: auto;
+    margin: 0 8px;
+  }
+  .moods {
+    flex-wrap: wrap;
+  }
+  h1, p {
+    text-align: center;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .container { width: 750px; }
+  .container {
+    width: 750px;
+    margin: auto;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .container { width: 970px; }
+  .container {
+    width: 970px;
+    margin: auto;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .container { width: 1170px; }
+  .container {
+    width: 1170px;
+    margin: auto;
+  }
 }
 
 /* for desktop */
@@ -71,5 +101,15 @@ body {
   /* for mobile phones */
   [class*="col-"] {
     width: 100%;
+  }
+}
+
+/* Keyframes with classes to call them */
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

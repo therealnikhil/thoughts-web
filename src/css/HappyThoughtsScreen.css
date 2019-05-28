@@ -27,12 +27,14 @@
   color: #fff;
   font-weight: 600;
   text-shadow: 0 2px 5px #000000;
+  animation: 1s ease-out 0s 1 opacityAnimation;
 }
 
 .bg-text {
   font-size: 1em;
   color: #fff;
   text-shadow: 0 2px 5px #000000;
+  animation: 1s ease-out 0s 1 opacityAnimation;
 }
 
 .shuffle {

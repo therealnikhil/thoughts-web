@@ -66,8 +66,12 @@ export default function HappyThoughtsScreen() {
       {
         randomIndex !== -1 && happyThoughts.length > 0 &&
         <div style={{ maxWidth: 970 }}>
-          <p className="bg-title">{happyThoughts[randomIndex].title}</p>
-          <p className="bg-text">~ {moment(happyThoughts[randomIndex].time).format("MMMM Do YYYY, h:mm:ss a")}</p>
+          <p className="bg-title">
+            {happyThoughts[randomIndex].title}
+          </p>
+          <p className="bg-text">
+            ~ {moment(happyThoughts[randomIndex].time).format("MMMM Do YYYY, h:mm:ss a")}
+          </p>
           <div className="shuffle" onClick={shuffle} />
         </div>
       }

@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function HabitsScreen() {
-  return <h1>HABITS</h1>;
+  return (
+    <div className="container">
+      <h1>Habits</h1>
+    </div>
+  );
 }
