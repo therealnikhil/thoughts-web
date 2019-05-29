@@ -24,7 +24,9 @@ export const updateLoginStatus = function() {
 export const modules = {
   THOUGHTLIST: 0,
   HAPPYTHOUGHTS: 1,
-  HABITS: 2
+  HABITS: 2,
+  INSIGHTS: 3,
+  RESOURCES: 4
 };
 
 // moods

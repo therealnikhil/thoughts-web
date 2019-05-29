@@ -26,15 +26,15 @@
 
 @-webkit-keyframes greenBgOnHover {
   from { background-color: none }
-  to { background-color: #029060 }
+  to { background-color: var(--main-green-color) }
 }
 
 @-moz-keyframes greenBgOnHover {
   from { background-color: none }
-  to { background-color: #029060 }
+  to { background-color: var(--main-green-color) }
 }
 
 @keyframes greenBgOnHover {
   from { background-color: none }
-  to { background-color: #029060 }
+  to { background-color: var(--main-green-color) }
 }

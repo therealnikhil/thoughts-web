@@ -8,7 +8,15 @@ function logout() {
   window.location.reload();
 }
 
-export default function NavBar({ homeHandler, happyThoughtsHandler, habitsHandler, purple, active }) {
+export default function NavBar({
+  homeHandler,
+  happyThoughtsHandler,
+  habitsHandler,
+  insightsHandler,
+  resourcesHandler,
+  purple,
+  active
+}) {
   return (
     <div className="top-container" style={purple ? {} : { background: "none" }}>
       <span
@@ -28,6 +36,18 @@ export default function NavBar({ homeHandler, happyThoughtsHandler, habitsHandle
         onClick={habitsHandler}
       >
         Habits
+      </span>
+      <span
+        className={ active === "insights" ? "active" : "inactive" }
+        onClick={insightsHandler}
+      >
+        Insights
+      </span>
+      <span
+        className={ active === "resources" ? "active" : "inactive" }
+        onClick={resourcesHandler}
+      >
+        Resources
       </span>
       <span
         onClick={logout}

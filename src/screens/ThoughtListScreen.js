@@ -99,7 +99,7 @@ export default function ThoughtListScreen() {
   return (
     <div>
       <div className="create-thought-bg">
-        <h1>
+        <h1 style={{ color: "var(--light-green-color)" }}>
           Log Thought
         </h1>
         <div className="create-thought-box container">
