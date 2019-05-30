@@ -12,14 +12,14 @@
   z-index: 1000000;
 }
 
-.top-container > span {
+.top-container > .nav-item, .website-name {
   color: #fff;
   font-weight: bold;
   padding: 6px 12px;
   border-radius: 1em;
 }
 
-.top-container > span:hover, .top-container > span.active {
+.top-container > .nav-item:hover, .top-container > .nav-item.active {
   cursor: pointer;
   animation: greenBgOnHover 0.2s ease-in 0s 1 forwards;
 }
@@ -37,4 +37,13 @@
 @keyframes greenBgOnHover {
   from { background-color: none }
   to { background-color: var(--main-green-color) }
+}
+
+.menu-icon {
+  height: 1em;
+  width: auto;
+  margin: 6px 0;
+  position: fixed;
+  top: 10px;
+  left: 18px;
 }
